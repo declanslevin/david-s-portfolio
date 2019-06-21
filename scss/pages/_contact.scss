@@ -1,0 +1,210 @@
+.contact {
+    &-main .container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    &-form {
+        width: 100%;
+        padding-bottom: calc(#{$padding-normal} * 2);
+        border-top: 1px solid $color-snow;
+    
+        input {
+            height: 2rem;
+            font-size: 1rem;
+            padding: $padding-normal;
+            font-family: 'Raleway', sans-serif;
+        }
+    }
+
+    &-details {
+        width: 100%;
+        padding-top: calc(#{$padding-normal} * 2);
+
+        h2 {
+            padding-bottom: calc(#{$padding-normal} * 2);
+        }
+
+        h4 {
+            padding-bottom: calc(#{$padding-normal} * 2);
+        }
+
+        p {
+            padding-bottom: calc(#{$padding-normal} * 2);
+        }
+    }
+
+    &-link {
+        padding-bottom: calc(#{$padding-normal} * 2);
+    
+        @media ( hover: hover ) {
+            a:hover {
+                padding-bottom: 2px;
+                border-bottom: 2px solid $color-black-shadows;
+            }
+        }
+
+        @media ( hover: none ) {
+            a:active {
+                padding-bottom: 2px;
+                border-bottom: 2px solid $color-black-shadows;
+            }
+        }
+        
+    }
+}
+
+.form {
+    &-name {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-submit {
+        margin: 30px 0;
+        padding: $padding-normal calc(#{$padding-normal} * 3);
+        border: 1px solid $color-snow;
+        background-color: transparent;
+        color: $color-snow;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 1.5;
+        line-height: 1.5;
+        font-size: 1rem;
+        width: 100%;
+        transition: all 0.4s ease-in;
+    
+        @media ( hover: hover ) {
+            &:hover {
+                background-color: $color-snow;
+                color: $color-charleston-green;
+                transition: all 0.4s ease-in;
+            }
+        }
+
+        @media ( hover: none ) {
+            &:active {
+                background-color: $color-snow;
+                color: $color-charleston-green;
+            }
+        }
+        
+    }
+}
+
+.form-first-name,
+.form-last-name {
+    width: 100%;
+}
+
+.form-first-name,
+.form-last-name,
+.form-email,
+.form-subject,
+.form-message {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+label,
+textarea {
+    padding-top: calc(#{$padding-normal} * 2);
+    padding-bottom: $padding-normal;
+}
+
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    padding: $padding-normal;
+    width: 100%;
+}
+
+.link {
+    &-flex {
+    display: flex;
+    justify-content: center;
+    }
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.social-wrapper {
+    display: block;
+    justify-content: flex-start;
+
+    i {
+        font-size: 3rem;
+    }
+
+    a {
+        display: inline-block;
+        margin-bottom: calc(#{$padding-normal} * 2);
+
+        &:not(:last-child) {
+            padding-right: calc(#{$padding-normal} * 2);
+        }
+    }
+}
+
+
+@media ( min-width: 450px ) {
+    .form {
+        &-name {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+    
+        &-first-name {
+            margin-right: 25px;
+            width: 50%;
+        }
+        
+        &-last-name {
+            width: 50%;
+        }
+    
+        &-submit {
+            width: auto;
+        }
+    }
+}
+
+@media ( min-width: 900px ) {
+
+    .contact {
+        &-main .container {
+            flex-direction: row;
+        }
+    
+        &-form {
+            width: 50%;
+            padding: calc(#{$padding-normal} * 2) $padding-normal $padding-normal 0;
+            border-top: none;
+        }
+    
+        &-details {
+            width: 50%;
+            padding-left: $padding-normal;
+        }
+    }
+    
+    .link {
+        &-flex {
+            display: block;
+            justify-content: center;
+        }
+        
+        &-wrapper {
+            display: block;
+        }
+    }
+
+    .social-wrapper i {
+        font-size: 3.5rem;
+    }
+}

@@ -1,0 +1,16 @@
+.social {
+    transition: all 0.2s ease-out;
+
+    @media ( hover: hover ) {
+        &:hover {
+            color: $color-black-shadows;
+            transition: all 0.2s ease-in;
+        }
+    }
+
+    @media ( hover: none ) {
+        &:active {
+            color: $color-black-shadows;
+        }
+    }
+}

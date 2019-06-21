@@ -1,0 +1,26 @@
+.cta {
+    text-decoration: none;
+    padding: $padding-normal;
+    background-color: rgba($color-black-shadows,0.3);
+    border: 1px solid $color-snow;
+    transition: all 0.4s ease-out;
+
+    @media ( hover: hover ) {
+        &:hover {
+            color: $color-dim-gray;
+            background-color: $color-snow;
+            transition: all 0.4s ease-in;
+        }
+    }
+
+    @media ( hover: none ) {
+        &:active {
+            color: $color-dim-gray;
+            background-color: $color-snow;
+        }
+    }
+    
+    &:not(:last-child) {
+        margin-right: calc(#{$padding-normal});
+    }
+}

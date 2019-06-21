@@ -1,0 +1,239 @@
+.carousel {
+    position: relative;
+    height: calc(100% - 6rem);
+
+    &-container {
+        position: relative;
+        height: 100%;
+    }
+
+    &-content {
+        position: relative;
+        height: 100%;
+        z-index: 50;
+
+        div {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+    }
+
+    &-flex-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    &-text-flex-container {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    &-text {
+        border: 2px solid $color-snow;
+        background-color: rgba($color-dim-gray,0.4);
+        align-self: center;
+        padding: calc(#{$padding-normal} * 2);
+        
+        max-width: 75vw;
+        z-index: 100;
+
+        &-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: calc(#{$padding-normal} * 2);
+
+            li {
+                padding: 0 calc(#{$padding-normal});
+
+                &:not(:last-child) {
+                    border-right: 2px solid $color-snow;
+                }
+            }
+        }
+    
+        h2 {
+            font-size: 2.2rem;
+            color: $color-snow;
+            text-shadow: 1px 1px 1px $color-smoky-black;
+            padding: 0 calc(#{$padding-normal} * 2);
+            text-align: center;
+        }
+    
+        h3 {
+            font-size: 1.1rem;
+            color: $color-snow;
+            // padding-bottom: calc(#{$padding-normal} * 2);
+            text-align: center;
+        }
+    }
+    
+    &-ctas {
+        display: flex;
+        justify-content: center;
+    
+        &:first-of-type(a) {
+            margin-right: calc(#{$padding-normal} * 2);
+        }
+
+        a {
+            font-size: 0.8rem;
+        }
+    }
+
+    &-arrow-container {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 36px;
+        z-index: 50;
+        cursor: pointer;
+
+        &-left {
+            &-hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            &-touch {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        &-right {
+            right: 0;
+
+            &-hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            &-touch {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+    
+    &-arrow-left {
+        transition: all 0.4s ease-out;
+    }
+    
+    &-arrow-right {
+        right: 0;
+        transition: all 0.4s ease-out;
+    }
+    
+    &-arrow-left,
+    &-arrow-right {
+        color: rgba($color-snow,0.5);
+        font-size: 32px;
+        padding: 0 $padding-normal;
+        position: absolute;
+        top: 50%;
+        z-index: -1;
+        transition: all 0.4s ease-out;
+    }
+
+    &-arrow-hover {
+        &-left {
+            color: $color-snow;
+            transform: translateX(-5px);
+            transition: all 0.4s ease-out;
+        }
+
+        &-right {
+            color: $color-snow;
+            transform: translateX(5px);
+            transition: all 0.4s ease-out;
+        }
+    }
+
+    &-arrow-active {
+        &-left {
+            color: $color-snow;
+            transform: translateX(-5px);
+            transition: transform 0.1s ease-in;
+        }
+
+        &-right {
+            color: $color-snow;
+            transform: translateX(5px);
+            transition: transform 0.1s ease-in;
+        }
+    }
+}
+
+@media ( hover: none ) {
+    .carousel {
+        height: calc(100% - 4.6rem);
+    }
+}
+
+.slide {
+    &-1 {
+        @include slide('../images/carousel-placeholder-adi-goldstein-744703-unsplash.jpg');
+    }
+    &-2 {
+        @include slide('../images/carousel-placeholder-avel-chuklanov-1520657-unsplash.jpg');
+    }
+    &-3 {
+        @include slide('../images/carousel-placeholder-jakob-owens-277842-unsplash.jpg');
+    }
+    &-4 {
+        @include slide('../images/carousel-placeholder-jakob-owens-319396-unsplash.jpg');
+    }
+    &-5 {
+        @include slide('../images/carousel-placeholder-sam-mcghee-281613-unsplash.jpg');
+    }
+}
+
+@media ( min-width: 435px ) {
+    .carousel {
+        &-text {
+            h2 {
+                font-size: 3rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        &-ctas {
+            a {
+                font-size: 0.9rem;
+            }
+        }
+
+        &-list {
+
+            li {
+                padding: 0 calc(#{$padding-normal} / 2);
+            }
+        }
+    }
+}
+
+@media ( min-width: 620px ) {
+    .carousel {
+        &-text {
+            h2 {
+                font-size: 4rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+        }
+
+        &-ctas {
+            a {
+                font-size: 1rem;
+            }
+        }
+    }
+}
